@@ -41,7 +41,6 @@ h3 {
 p {
 	font-size: 0.875em;
 	line-height: 21px;
-    padding: 0 30px;
 }
 
 /*The widths are in a percentage!*/
@@ -56,31 +55,37 @@ header {
 }
 
 header h1 {
-	width: 50%;
-	margin: 0;
-	padding: 38px 0;
+	width: 100%;
+	padding-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 3px solid #77a466;
 }
 
 header h1 span {
 	color: #77a466;
+	padding-right: 10px;
 }
 
 header nav {
-	width: 50%;
-	padding: 46px 0;
+	width: 100%;
+	padding-bottom: 12px;
 }
 
 header nav ul {
 	margin: 0;
 	padding: 0;
 }
+
 header nav ul li {
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 0.875em;
-	padding: 0 10px;
-	display: inline;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 10px;
 }
+
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
@@ -125,23 +130,19 @@ header nav ul li a{
 	line-height: 25px;
 }
 
-.section-one,
-.section-two,
-.section-three {
-	width: 33%;
+.section-one, .section-two, .section-three {
+	width: 100%;
 	display: flex;
-	flex-flow: row wrap;
-	padding-top: 20px;
+	justify-items: normal;
+	flex-flow: column;
+	padding-top: 15px;
 }
 
 .section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
-.section-two h3,
-.section-three h3 {
-	padding: 0px 30px;
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 
 .menu {
@@ -181,4 +182,74 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+
+@media all and (min-width: 768px) {
+	/*****Tablet Styles*****/
+
+	.section-one, .section-two, .section-three {
+		width: 33%;
+		display: flex;
+		flex-flow: row wrap;
+		padding-top: 20px;
+	}
+	
+	.section-two {
+		border-top: none;
+		border-bottom: none;
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+	}
+	
+	.section-two h3, p,
+	.section-three h3, p {
+		padding: 0px 30px;
+	}
+
+}
+
+@media all and (min-width: 1200px) {
+	/*****Desktop Styles here*****/
+	
+	header h1 {
+		width: 50%;
+		margin: 0;
+		padding: 38px 0;
+		border-bottom: none;
+		justify-content: unset;
+		text-align: left;
+	}
+	
+	header nav {
+		width: 50%;
+		padding: 46px 0;	
+	}
+	
+	header nav ul li {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 0.875em;
+		padding: 0 10px;
+		display: inline-flex;
+	}
+
+	.section-one, .section-two, .section-three {
+		width: 33%;
+		display: flex;
+		flex-flow: row wrap;
+		padding-top: 20px;
+	}
+
+	.section-two {
+		border-top: none;
+		border-bottom: none;
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+	}
+
+	.section-two h3, p,
+	.section-three h3, p {
+		padding: 0px 30px;
+	}
+
 }
